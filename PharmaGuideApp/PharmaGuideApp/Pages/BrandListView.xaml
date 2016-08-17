@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PharmaGuideApp.Pages.BrandListView"
+             Title="Brand List View">
+  <ContentPage.Content>
+    <StackLayout>
+
+      <ListView  x:Name="listview" ItemsSource="{Binding .}" IsGroupingEnabled="True"  ItemTapped="OnItemSelected" GroupShortNameBinding="{Binding Key}" HasUnevenRows="True" >
+        <!--ItemsSource="{Binding BrandInfoGroup}"  IsGroupingEnabled="True"                GroupShortNameBinding="{Binding Key}" HasUnevenRows="True">-->
+       
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Padding="5">
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding BrandName}" FontAttributes="Bold" FontSize="14" TextColor="White" />
+                    <Label Text="{Binding ContentTitle}" FontAttributes="Bold" FontSize="14" TextColor="White" HorizontalOptions="Fill"/>
+                  </StackLayout>
+                </StackLayout>
+                 </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+    <!--<StackLayout BackgroundColor="#ff8da1">
+      <Label Text="{Binding BrandName}" TextColor="Black" FontSize="20"/>
+      <ListView ItemsSource="{Binding .}" IsGroupingEnabled="True" 
+                GroupShortNameBinding="{Binding Key}" HasUnevenRows="True" ItemSelected="OnItemSelected">
+        <ListView.GroupHeaderTemplate>
+          <DataTemplate>
+            <ViewCell Height="90"/>
+            <StackLayout VerticalOptions="FillAndExpand" Padding="10" BackgroundColor="Blue">
+              <Label Text="{Binding Key}" TextColor="White" VerticalOptions="Center"/>
+            </StackLayout>
+          </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Padding="5">
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding BrandName}" FontAttributes="Bold" FontSize="14" TextColor="#4c393c"/>
+                    <Label Text="{Binding ContentTitle}" FontAttributes="Bold" FontSize="14" TextColor="#4c393c"/>
+                  </StackLayout>
+                </StackLayout>
+                <MenuItem  CommandParameter="{Binding .}" Text="More" />
+                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>-->
+  </ContentPage.Content>
+</ContentPage>

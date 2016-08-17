@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="PharmaGuideApp.Pages.MasterPage"
+			 Padding="0,40,0,0"
+			Title="MasterPage">
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand" >
+      <StackLayout Padding="8" VerticalOptions="Fill">
+        <ListView x:Name="list"  SeparatorVisibility="None" BackgroundColor="#ff8da1" >
+          <ListView.ItemTemplate>
+            <DataTemplate >
+              <TextCell Text="{Binding Title}"  TextColor="#f6c5c6" />
+              <!--<ImageCell Text="{Binding Title}"  TextColor="Black"/>-->
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

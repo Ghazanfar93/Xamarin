@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PharmaGuideApp.Pages.MainPage"
+             >
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20,40,20,20"
+                Android="20,20,20,20"
+                WinPhone="20,20,20,20" />
+  </ContentPage.Padding>
+  <!--<ContentPage.Resources>
+    <ResourceDictionary>
+    </ResourceDictionary>
+  </ContentPage.Resources>-->
+  <ContentPage.Content >
+
+    <ScrollView IsClippedToBounds="true" x:Name="scrollHeight" >
+      <StackLayout Spacing="10" Padding="10"
+             Orientation="Vertical" x:Name="parent"  BackgroundColor="#ff8da1">
+        <StackLayout VerticalOptions="Start"  x:Name="childStackOne">
+          <!--<Button x:Name="evolveButton" Text="Go to modeless page" HorizontalOptions="StartAndExpand" 
+                  VerticalOptions="Start" Style="{DynamicResource buttonStyle}" Clicked="OnEvolveClicked"/>-->
+          <!--<Button x:Name="crudop" Text="go to modal page" Clicked="OnCrudClicked"/>-->
+          <Label  Text="Brand Name" Style="{DynamicResource labelStyle}" TextColor="White"   FontSize="Medium" FontAttributes="Bold"/>
+          <Entry x:Name="brandnameEntry" Text="{Binding BrandName}" HorizontalOptions="FillAndExpand"/>
+          <Label Text="Therapeutic Category"  Style="{DynamicResource labelStyle}" TextColor="White"   FontSize="Medium" FontAttributes="Bold"/>
+          <Entry x:Name="therapeuticEntry"  Text="{Binding TherapeuticCategory}"  HorizontalOptions="FillAndExpand"/>
+          <Label Text="Drug Category" Style="{DynamicResource labelStyle}" TextColor="White"   FontSize="Medium" FontAttributes="Bold"/>
+          <Entry x:Name="drugEntry" Text="{Binding DrugCategory}"   HorizontalOptions="FillAndExpand"/>
+          <Label Text="Content Title" Style="{DynamicResource labelStyle}" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+          <Entry x:Name="contenttitleEntry" Text="{Binding ContentTitle}"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Orientation="Vertical" VerticalOptions="Start" x:Name="childStackTwo" >
+          <StackLayout  Orientation="Horizontal" VerticalOptions="Start" Spacing="0" x:Name="childStackTwo_1" >
+            <Button
+              x:Name="packBtn"
+              Text="Pack"
+              BorderRadius="15"
+              BorderColor="White"
+              BorderWidth="2"
+              Clicked="OnPackClicked"
+              HeightRequest="60"
+              HorizontalOptions="FillAndExpand"
+           />
+            <Button
+                  x:Name="prescribeInfoBtn"
+                  Text="Prescribing Information"
+                  BorderRadius="15"
+                  BorderColor="White"
+                  BorderWidth="2"
+                    Clicked="OnPrescribeInfoClicked"
+              HeightRequest="60"
+                    HorizontalOptions="FillAndExpand"
+                />
+          </StackLayout>
+          <Editor
+            HorizontalOptions="Fill"
+            x:Name="packEditor"
+            IsVisible="False"
+            VerticalOptions="Fill"
+            HeightRequest="0"
+            BackgroundColor="White"
+                  Text="{Binding Pack}"
+          />
+          <Editor
+            HorizontalOptions="Fill"
+            x:Name="prescribeInfoEditor"
+            IsVisible="False"
+            VerticalOptions="Fill"
+            HeightRequest="0"
+            BackgroundColor="White"            
+                  Text="{Binding PrescribingInformation}"
+         />
+          <Button
+            Text="Submit"
+            BorderRadius="15"
+            BorderColor="White"
+             BorderWidth="2"
+            VerticalOptions="Fill"
+              HeightRequest="60"
+            x:Name="submit"
+            Clicked="OnSubmitClicked"
+          >
+            <Button.Triggers>
+              <DataTrigger TargetType="Button"
+                           Binding="{Binding Source={x:Reference brandnameEntry}, Path=Text.Length}"
+                           Value="0">
+                <Setter Property="IsEnabled" Value="False"/>
+              </DataTrigger>
+            </Button.Triggers>
+          </Button>
+          <Button Text="Navigate" BorderRadius="15"
+            BorderColor="White"
+             BorderWidth="2"
+            VerticalOptions="Fill"
+              HeightRequest="60"
+            x:Name="navigate"
+            Clicked="OnNavigateClicked" />
+            
+        
+        </StackLayout>
+
+      </StackLayout>
+    </ScrollView>
+
+  </ContentPage.Content>
+</ContentPage>

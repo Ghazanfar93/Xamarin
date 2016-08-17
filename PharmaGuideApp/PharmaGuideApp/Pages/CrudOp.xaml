@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PharmaGuideApp.Pages.CrudOp">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20,40,20,20"
+                Android="20,20,20,20"
+                WinPhone="20,20,20,20" />
+  </ContentPage.Padding>
+  <StackLayout Orientation="Vertical"
+               HorizontalOptions="Fill" BackgroundColor="#ffdae0">
+    <StackLayout VerticalOptions="Fill" BackgroundColor="#ffc0cb" Padding="10,10">
+      <Button Clicked="goBackButton" Text="Back to Main" HorizontalOptions="Start" VerticalOptions="Start"/>
+      <Label Text="Enter Brand ID" HorizontalOptions="Start" TextColor="Black" />
+      <Entry Placeholder="Enter Brand ID" TextColor="Black" VerticalOptions="StartAndExpand" />
+      <Label Text="To Perform Actions" TextColor="Black" />
+      <Button Text="Create"   VerticalOptions="Fill" HorizontalOptions="Fill"
+             x:Name="Create" />
+      <Button Text="Update" HorizontalOptions="Fill" VerticalOptions="Fill"
+              x:Name="Update" />
+      <Button Text="Delete"  VerticalOptions="Fill" HorizontalOptions="Fill"
+             x:Name="Delete" />
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
